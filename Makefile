@@ -25,7 +25,7 @@ out/libblah.${LIBRARY_EXTENSION}: out BlahImpl.cpp Blah.h
 	g++ -std=c++11 -shared -fPIC -I${JAVA_INC} -I${JAVA_INC}/${OS_INCLUDE_DIR} BlahImpl.cpp -o $@
 
 run: Blah.class out/libblah.${LIBRARY_EXTENSION}
-	java -Djava.library.path=out Blah
+	echo "foo bar baz" | java -Djava.library.path=out Blah
 
 clean:
 	rm -f Blah.h Blah.class
